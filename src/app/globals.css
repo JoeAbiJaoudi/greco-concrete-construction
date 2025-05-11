@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global CSS Variables */
+:root {
+  /* Sage Theme Colors */
+  --color-primary: #4A665A;
+  --color-secondary: #728C7B;
+  --color-accent: #86A68B;
+  --color-background: #F1F4F2;
+  --color-white: #ffffff;
+  --color-black: #2E3D35;
+  
+  /* Typography Variables */
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-body: 'Montserrat', sans-serif;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+  --font-size-6xl: 3.75rem;
+  --font-size-7xl: 4.5rem;
+  --line-height-none: 1;
+  --line-height-tight: 1.2;
+  --line-height-snug: 1.375;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+  --line-height-loose: 2;
+  --letter-spacing-tighter: -0.05em;
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0em;
+  --letter-spacing-wide: 0.025em;
+  --letter-spacing-wider: 0.05em;
+  --letter-spacing-widest: 0.2em;
+  
+  /* Set default background and foreground based on theme colors */
+  --background: var(--color-white);
+  --foreground: var(--color-black);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--color-primary);
+    --foreground: var(--color-white);
+  }
+}
+
+/* Global styles */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  line-height: var(--line-height-normal);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-tight);
+}
+
+h1 {
+  font-size: var(--font-size-5xl);
+  letter-spacing: var(--letter-spacing-wider);
+}
+
+h2 {
+  font-size: var(--font-size-4xl);
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+h3 {
+  font-size: var(--font-size-3xl);
+}
+
+h4 {
+  font-size: var(--font-size-2xl);
+}
+
+h5 {
+  font-size: var(--font-size-xl);
+}
+
+h6 {
+  font-size: var(--font-size-lg);
+}
+
+/* Custom Animations & Styles */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Animation for fade in effect */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-in forwards;
+}
+
+/* Typography utility classes */
+.page-title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-7xl);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-wider);
+  line-height: var(--line-height-tight);
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+.sub-heading {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-2xl);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+}
+
+.body-large {
+  font-family: var(--font-body);
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+}
+
+.body-normal {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+}
+
+.body-small {
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+}
+
+.uppercase-wide {
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-widest);
+}
+
+/* Add these to your globals.css file */
+
+/* Animation for scroll fade-in effect */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Will-change hint to improve animation performance */
+.scroll-fade-element {
+  will-change: opacity, transform;
+}
+
+/* Add these animations to your globals.css file */
+
+/* Animation for auto-fade on load */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Auto-fade classes with different delays */
+.fade-in-0 {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 0ms;
+}
+
+.fade-in-200 {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 200ms;
+}
+
+.fade-in-400 {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 400ms;
+}
+
+.fade-in-600 {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 600ms;
+}
+
+.fade-in-800 {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 800ms;
+}
+
+/* Scroll-based fade animation (remains unchanged) */
+.scroll-fade-element {
+  will-change: opacity, transform;
+}
+
+/* Add these animations to your globals.css file */
+
+/* Animation for auto-fade on load */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Auto-fade classes with different delays */
+.fade-in-0 {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 0ms;
+}
+
+.fade-in-100 {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 100ms;
+}
+
+.fade-in-200 {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 200ms;
+}
+
+.fade-in-300 {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 300ms;
+}
+
+.fade-in-400 {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 400ms;
+}
+
+.fade-in-500 {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 500ms;
+}
+
+.fade-in-600 {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 600ms;
+}
+
+.fade-in-700 {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 700ms;
+}
+
+.fade-in-800 {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 800ms;
+}
+
+/* More granular classes */
+.fade-in-50 {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 50ms;
+}
+
+.fade-in-150 {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 150ms;
+}
+
+.fade-in-250 {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 250ms;
+}
+
+/* When animations are disabled */
+.animations-disabled * {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+  transition: none !important;
+}
